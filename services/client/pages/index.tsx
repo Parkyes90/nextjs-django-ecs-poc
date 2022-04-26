@@ -1,7 +1,7 @@
 import type { GetServerSideProps, NextPage } from "next";
 
 const Home: NextPage = () => {
-  return <div>Test</div>;
+  return <div>Testasdasdasasdzxcxcd</div>;
 };
 
 export default Home;

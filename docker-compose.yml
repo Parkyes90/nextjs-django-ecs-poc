@@ -1,0 +1,12 @@
+version: "3.10"
+services:
+  client:
+    restart: always
+    build:
+      context: ./services/client
+    volumes:
+      - ./services/client:/usr/src/app
+      - /usr/src/app/node_modules/
+    command: npm run dev
+    ports:
+      - "3000:3000"
