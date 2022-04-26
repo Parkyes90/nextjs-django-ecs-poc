@@ -10,3 +10,10 @@ services:
     command: npm run dev
     ports:
       - "3000:3000"
+  api:
+    restart: always
+    build:
+      context: ./services/api
+    command: pipenv run django 0.0.0.0:8000
+    volumes:
+      - ./services/api:/usr/src/app
