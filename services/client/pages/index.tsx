@@ -11,9 +11,7 @@ const Home: NextPage<Response> = (context) => {
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const res = await fetch("http://api:8000/posts");
-  const data = await res.json();
   return {
-    props: data,
+    props: [],
   };
 };
