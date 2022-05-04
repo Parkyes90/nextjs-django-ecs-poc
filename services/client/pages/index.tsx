@@ -1,17 +1,13 @@
-import type { GetServerSideProps, NextPage } from "next";
+import type { NextPage } from "next";
+import NavBar from "../components/NavBar";
 
-interface Response {
-  posts: string[];
-}
-
-const Home: NextPage<Response> = (context) => {
-  return <div>{context.posts}</div>;
+const Home: NextPage = () => {
+  return (
+    <div>
+      <NavBar />
+      Hello
+    </div>
+  );
 };
 
 export default Home;
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  return {
-    props: [],
-  };
-};
