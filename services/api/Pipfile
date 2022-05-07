@@ -8,8 +8,6 @@ django = "*"
 djangorestframework = "*"
 gunicorn = "*"
 uvicorn = "*"
-
-[dev-packages]
 drf-spectacular = "*"
 drf-spectacular-sidecar = "*"
 

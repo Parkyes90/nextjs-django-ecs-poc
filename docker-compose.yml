@@ -4,9 +4,10 @@ services:
     restart: always
     build:
       context: ./services/client
-      target: development
+      target: production
     volumes:
       - /usr/src/app/node_modules/
+      - /usr/src/app/.next/
       - ./services/client:/usr/src/app
     ports:
       - "3000:3000"
@@ -16,7 +17,7 @@ services:
     restart: always
     build:
       context: ./services/api
-      target: development
+      target: production
     volumes:
       - ./services/api:/usr/src/app
     ports:
