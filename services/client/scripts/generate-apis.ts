@@ -8,13 +8,13 @@ axios({
   responseType: "stream",
 })
   .then(async (response) => {
-    response.data.pipe(fs.createWriteStream("openapi.yaml"));
+    response.data.pipe(fs.createWriteStream("openapi.json"));
     await generate({
-      input: "./openapi.yaml",
+      input: "./openapi.json",
       output: "./apis",
       httpClient: "axios",
     });
-    console.info("API 생성이 완료됐습니다.")
+    console.info("API 생성이 완료됐습니다.");
   })
   .catch((error) => {
     console.error(error.code);
