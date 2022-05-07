@@ -1,0 +1,41 @@
+openapi: 3.0.3
+info:
+  title: NEXT_JS_WITH_DJANGO
+  version: 1.0.0
+  description: DEMO PROJECT
+paths:
+  /api/v1/users/:
+    get:
+      operationId: users_list
+      tags:
+      - users
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserList'
+          description: ''
+components:
+  schemas:
+    UserList:
+      type: object
+      properties:
+        name:
+          type: string
+      required:
+      - name
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

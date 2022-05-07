@@ -4,13 +4,15 @@ services:
     restart: always
     build:
       context: ./services/client
+      target: development
     volumes:
-      - ./services/client:/usr/src/app
       - /usr/src/app/node_modules/
-    command: npm run dev
+      - ./services/client:/usr/src/app
     ports:
       - "3000:3000"
-  api:
+    environment:
+      - BASE_API_URL=http://server:8000
+  server:
     restart: always
     build:
       context: ./services/api
