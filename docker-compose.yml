@@ -1,6 +1,8 @@
 version: "3.10"
 services:
   client:
+    depends_on:
+      - server
     restart: always
     build:
       context: ./services/client
@@ -13,6 +15,8 @@ services:
       - "3000:3000"
     environment:
       - BASE_API_URL=http://server:8000
+    command: >
+      bash -c "npm run generate:api && npm run dev"
   server:
     restart: always
     build:

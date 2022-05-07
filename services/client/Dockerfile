@@ -6,7 +6,7 @@ COPY package*.json ./
 RUN npm install --only=prod
 RUN export PATH=/usr/src/app/node_modules/.bin:$PATH
 
-COPY . .
+COPY . ./
 
 EXPOSE 3000
 
@@ -16,4 +16,3 @@ CMD npm run start
 
 FROM builder as development
 RUN npm install -D
-CMD npm run dev
