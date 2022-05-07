@@ -1,9 +1,6 @@
 import type { GetServerSideProps, NextPage } from "next";
 import NavBar from "../components/NavBar";
-import axios from "axios";
-import { UserList, UsersService } from "../generated";
-
-axios.defaults.baseURL = process.env.BASE_API_URL;
+import { UserList, UsersService } from "../apis";
 
 type Props = {
   usersList: Array<UserList>;

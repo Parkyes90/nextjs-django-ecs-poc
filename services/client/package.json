@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate:api": "./node_modules/.bin/ts-node scripts/generate-apis.ts"
   },
   "dependencies": {
     "axios": "^0.27.2",
@@ -22,6 +23,7 @@
     "eslint-config-next": "12.1.5",
     "openapi-typescript-codegen": "^0.22.0",
     "prettier": "^2.6.2",
+    "ts-node": "^10.7.0",
     "typescript": "4.6.3"
   }
 }
