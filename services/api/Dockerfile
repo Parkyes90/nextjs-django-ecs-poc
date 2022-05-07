@@ -12,6 +12,8 @@ COPY Pipfile* ./
 
 RUN pipenv install --system --ignore-pipfile
 
+EXPOSE 8000
+
 COPY . .
 
 FROM builder as development
@@ -20,4 +22,3 @@ CMD python manage.py runserver 0.0.0.0:8000
 
 FROM builder as production
 CMD gunicorn config.asgi:application -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8000 --log-level info
-EXPOSE 8000
