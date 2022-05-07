@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from drf_spectacular.utils import extend_schema
 from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
@@ -18,5 +19,8 @@ class UserListSerializer(serializers.Serializer):
     responses={200: UserListSerializer},
 )
 class UserListView(ListAPIView):
+    def get_queryset(self):
+        return get_user_model()
+
     def list(self, request, *args, **kwargs):
         return Response(data=[{"name": 1}])

@@ -16,3 +16,6 @@ python_version = "3.10"
 
 [scripts]
 django = "python manage.py runserver"
+
+[dev-packages]
+whitenoise = "*"

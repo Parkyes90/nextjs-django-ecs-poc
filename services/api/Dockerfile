@@ -18,7 +18,7 @@ COPY . .
 
 FROM builder as development
 RUN pipenv install --system --dev --ignore-pipfile
-CMD python manage.py runserver 0.0.0.0:8000
+CMD gunicorn config.asgi.dev:application -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8000 --log-level debug --access-logfile - --error-logfile - --reload
 
 FROM builder as production
-CMD gunicorn config.asgi:application -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8000 --log-level info
+CMD gunicorn config.asgi.prod:application -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8000 --log-level info --access-logfile - --error-logfile -
