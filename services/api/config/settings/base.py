@@ -133,3 +133,6 @@ LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
 }
+
+
+REST_FRAMEWORK = {}

@@ -12,7 +12,7 @@ services:
       - /usr/src/app/.next/
       - ./services/client:/usr/src/app
     ports:
-      - "3000:3000"
+      - "3001:3000"
     environment:
       - BASE_API_URL=http://server:8000
     command: >
@@ -25,4 +25,4 @@ services:
     volumes:
       - ./services/api:/usr/src/app
     ports:
-      - "3001:8000"
+      - "3002:8000"
