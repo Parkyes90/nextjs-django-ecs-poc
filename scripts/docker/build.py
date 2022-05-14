@@ -1,11 +1,10 @@
-import os
 import sys
 import subprocess
 from pathlib import Path
 
 import click
 
-ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+from common import ROOT_DIR
 
 
 @click.command()
