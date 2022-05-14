@@ -3,7 +3,7 @@ FROM node:18-slim as builder
 WORKDIR /usr/src/app
 COPY package*.json ./
 
-RUN npm install --only=prod
+RUN npm install
 RUN export PATH=/usr/src/app/node_modules/.bin:$PATH
 
 COPY . ./
@@ -15,4 +15,3 @@ RUN npm run build
 CMD npm run start
 
 FROM builder as development
-RUN npm install -D
